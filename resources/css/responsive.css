@@ -1,0 +1,117 @@
+
+
+
+@media only screen and (max-width:1160px){
+    .row{
+        margin: 0 1.5rem;
+
+    }
+
+    
+    html{
+        font-size: 57.5%;
+    }
+
+    .client-photo{
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+    .client-review{
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+    .contact-section form{
+        width: 100%;
+        margin-left: 0;
+    }
+    .hero-text-box{
+        width: 100%;
+        padding: 2%;
+    }
+
+}
+
+@media only screen and (max-width:1050px){
+
+    .main-nav{
+        display: none;
+    }
+    .mobile-menu span{
+        display: block;
+    }
+}
+
+
+
+@media only screen and (max-width:1100px){
+    
+    .span_1_of_4{
+        width: 49.2%;
+    }
+    .span_1_of_4:nth-child(3){
+        margin-left: 0;
+    }
+    html{
+        font-size: 62.5%;
+    }
+}
+
+@media only screen and (max-width:830px){
+    .span_1_of_4{
+        width: 100%;
+    }
+    .little-description{
+        width: 100%;
+        margin-left: 0;
+    }
+    h1{
+        font-size: 3.5rem;
+    }
+    h2{
+        font-size: 3rem;
+    }
+    h3{
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width:670px){
+    .col{
+        text-align: center;
+    }
+    html{
+        font-size: 50%;
+    }
+    .span_1_of_2{
+        width: 100%;
+    }
+    .portfolio-section img{
+        width: 70%;
+    }
+    .protfolio-filter button{
+    background: #ebc985;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border: none;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    color: #3c4761;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+#contact > div:nth-child(2) > form > div:nth-child(1) > div:nth-child(2) > input[type=email]{
+    margin-left: -1.5rem;
+}
+}
+
+@media only screen and (max-width:670px){
+    #contact > div:nth-child(2) > form > div:nth-child(1) > div:nth-child(2) > input[type=email]{
+    margin-left: -1.5rem;
+}
+}

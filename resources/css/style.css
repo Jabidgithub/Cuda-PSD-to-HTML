@@ -1,0 +1,719 @@
+
+
+/* ============================= */
+/* Basic setup  */
+/* ============================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Titillium Web', sans-serif;
+    text-rendering: optimizeLegibility;
+    line-height: 1.3;
+}
+
+ul li{
+    list-style: none;
+
+}
+
+
+/* HEADING */
+
+h1{
+    font-size: 4.2rem;
+    color: #ffff;
+}
+
+h2{
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+h2::after{
+    content: "";
+    display: block;
+    height: 0.4rem;
+    background: #ffff;
+    width: 8.8rem;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+
+h3{
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+}
+
+h4{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 2.5rem;
+}
+
+.box{
+    padding: 1%;
+}
+.box p{
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-top: 2rem;
+}
+
+.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+
+/* ============================= */
+
+/* ============================= */
+/* Reusable code DRY METHOD */
+/* ============================= */
+
+.row{
+    max-width: 114rem;
+    margin: 0 auto;
+}
+
+/* LITTLE DESCRIPTION */
+
+.little-description{
+    font-size: 1.8rem;
+    width: 60%;
+    margin-left:20%;
+    line-height: 3rem;
+}
+
+/* SECTION */
+
+section{
+    padding: 8rem 0;
+}
+/* BUTTON */
+.btn,
+.btn:link,
+.btn:visited{
+    background: #333;
+    color: #fff;
+    border-bottom: 0.3rem solid #0000;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 6rem;
+    border-radius: 0.3rem;
+    display: inline-block;
+    margin-top: 4.5rem;
+}
+
+
+/* ============================= */
+/*HEADER SECTION */
+/* ============================= */
+
+header{
+    background: linear-gradient(rgba(135, 80, 156, 0.9),rgba(135, 80, 156, 0.9)), url(./image/pic8.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center top;
+    height: 85vh;
+    position: relative;
+
+}
+.logo{
+    height: 3.5rem;
+    width: auto;
+    margin-top: 3.5rem;
+    float: left;
+}
+
+
+/* MAIN NAVIGATION */
+
+.main-nav{
+    float: right;
+    margin-top: 4rem;
+
+}
+
+.main-nav li{
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.main-nav li:first-child{
+    margin-left: 0;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+    color: #ffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #643a7900;
+    padding: 0.4rem 1.6rem;
+    border-radius: 0.3rem;
+    display: inline-block;
+    font-size: 1.6rem;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+.main-nav li:hover a:link,
+.main-nav li:hover a:visited{
+    background: #643a79;
+
+}
+
+
+.main-nav li.active a{
+    background: #643a79;
+}
+
+/* ================ */
+/* mobile menu */
+/* ============= */
+
+.mobile-menu span{
+    color: #fff;
+    font-size: 4rem;
+    float: right;
+    margin-top: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+.overlay{
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 1;
+    overflow-x: hidden;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.overlay-content{
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+}
+
+.overlay-content a,
+.overlay .close-btn{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin: 1rem 0;
+    
+}
+
+.overlay .close-btn{
+    position: absolute;
+    top: 2rem;
+    right: 4.5rem;
+    font-size: 6rem;
+}
+/* ============================ */
+/* sticky menu navigation */
+/* =========================== */
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #87509c;
+    padding: 2rem 0;
+    box-shadow: 0 0.5rem 0.5rem rgba(255,255,255,0.9);
+    z-index: 1;
+    overflow-x: hidden;
+    transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+}
+
+.sticky .mobile-menu span{
+    margin-top: -0.5rem;
+}
+
+.sticky .logo{
+    margin-top: 0;
+}
+
+.sticky .main-nav{
+    margin-top: 0;
+}
+
+.hero-text-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 114rem;
+
+}
+
+.btn-hero:link,
+.btn-hero:visited{
+    background: #eb7d4b;
+    border-color: #c86a40;
+    font-size: 1.8rem;
+}
+
+
+/* ============================= */
+/* SERVICES SECTION  */
+/* ============================= */
+
+.services-section{
+    background: linear-gradient(rgba(23, 194, 163, 0.9),rgba(38, 255, 215, 0.9)), url(./image/pic7.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    color: #fff;
+    text-align: center;
+}
+
+.services-section h2::after{
+    background: #14a58c;
+}
+
+.services-icon{
+    height: 12.6rem;
+    margin-top: 4.5rem;
+    margin-bottom: 3.5rem;
+} 
+
+
+/* ============================= */
+/* TEAM SECTION  */
+/* ============================= */
+
+
+.team-section{
+    background: linear-gradient(
+        rgba(231, 241, 248, 0.9),
+        rgba(231, 241, 248, 0.8)),
+        url(./image/pic6.jpg) 
+        no-repeat;
+    background-size: cover;
+    background-position:center top;
+    background-attachment: fixed;   
+    text-align: center;
+}
+
+
+.team-section h2{
+    color: #3c4761;
+}
+
+.team-section h2::after{
+    background: #c8d9e5;
+}
+
+.team-member{
+    margin-top: 4.5rem;
+    margin-bottom: 3.5rem;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+}
+
+
+.team-section h3{
+    color: #27283d;
+    font-size: 2.4rem;
+
+}
+
+.role{
+    color: #6dcced;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.team-section .box p{
+    color: #3c4761;
+}
+
+.social-link {
+    margin-top: 4.5rem;
+}
+
+.social-link ul li{
+    display: inline-block;
+    margin: 0 0.5rem;
+
+}
+
+.social-link ul li a{
+    color: #ffff;
+
+}
+
+.social-link ul li a:link i::before{
+    background: #bdd1df;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.social-link ul li a:hover i::before{
+    background: #393939;
+    transform: rotate(360deg);
+}
+
+
+/* ============================= */
+/* SKill Section  */
+/* ============================= */
+
+
+.skill-section{
+    background: linear-gradient(rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.7)), url(./image/pic3.jpg);
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.skill-section h2,
+.skill-section h3{
+    color: #3c4761;
+}
+
+.skill-section h2::after{
+    background: #dfe8ed;
+}
+
+.skill-section .box{
+    margin-top: 4.5rem;
+}
+
+svg.radial-progress circle{
+    stroke-width: 5;
+}
+
+svg.radial-progress text{
+    fill: #3c4761;
+    font-size: 1.5rem;
+}
+
+svg.web-design circle{
+    stroke: #30bae7;
+}
+
+svg.html-css circle{
+    stroke: #d74680;
+}
+
+svg.graphics-design circle{
+    stroke: #15c7a8;
+}
+
+svg.ui-ux circle{
+    stroke: #eb804f;
+}
+
+
+/* ============================= */
+/* protfolio Section  */
+/* ============================= */
+
+
+
+.portfolio-section{
+    background:  linear-gradient(rgba(255, 221, 153, 1),rgba(255, 221, 153, 0.6)),url(./image/pic2.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    text-align: center;
+}
+
+.portfolio-section h2{
+    color: #393939;
+}
+
+.portfolio-section h2::after{
+    background: #e5c37f;
+}
+
+.protfolio-filter{
+    margin: 4.5rem 0;
+}
+
+.protfolio-filter button{
+    background: #ebc985;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    color: #3c4761;
+    transition: all 0.5s ease;
+}
+
+.portfolio-section button:hover{
+    cursor: pointer;
+    box-shadow: inset 0 0.3rem 0.5rem rgba(60, 71, 97, 0.5);
+}
+
+.portfolio-section img{
+    width: 100%;
+    height: auto;
+}
+
+.portfolio-section div:nth-child(3) div:nth-child(3){
+    margin-left: 0;
+}
+
+.btn.btn-load-more{
+    background: #17c2a4;
+    border-color: #14a58c;
+}
+
+.portfolio-section .mixitup-control-active{
+    background: #fff;
+}
+
+
+
+/* ============================= */
+/* testimonial Section  */
+/* ============================= */
+
+
+.testimonial{
+    background: linear-gradient(rgba(215, 70, 128, 0.85),rgba(215, 70, 128, 0.85)),url(./image/pic1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    text-align: center;
+}
+
+.testimonial h2{
+    color: #fff;
+}
+
+.testimonial h2::after{
+    background: #b73c6d;
+
+}
+
+.testimonial .little-description{
+    color: #f7dae6;
+}
+
+.testimonial div:nth-child(2) .col:nth-child(3){
+    margin-left: 0;
+}
+
+.testimonial .col:nth-child(1),
+.testimonial .col:nth-child(2){
+    margin-top: 4rem;
+}
+
+.testimonial .col:nth-child(3),
+.testimonial .col:nth-child(4){
+    margin-top: 8rem;
+}
+
+.client-photo img{
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    margin-bottom: 3rem;
+}
+
+.client-photo{
+    width: 10rem;
+    margin-right: 4rem;
+    float: left;
+}
+
+.client-review{
+    text-align: left;
+    width: 30rem;
+    float: left;
+}
+
+.client-review p{
+    font-size: 2.1rem;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: #fff;
+    font-weight: 300;
+}
+
+.client-review h3{
+    font-weight: 400;
+}
+
+.client-review span.role{
+    color: #ffdd99;
+}
+
+
+/* ============================= */
+/* contact Section  */
+/* ============================= */
+
+
+.contact-section{
+    background: linear-gradient(#3c5499,#3c5499);
+    text-align: center;
+}
+
+.contact-section h2::after{
+    background: #273a71;
+}
+
+.contact-section .little-description{
+    color: #ffffff;
+}
+
+.contact-section form{
+    margin-top: 5rem;
+    width: 70%;
+    margin-left: 15%;
+
+}
+
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+#contact > div:nth-child(2) > form > div:nth-child(2) > textarea{
+    background: #273a71;
+    border: 0.1rem solid #273a71;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 0.5rem 0;
+}
+
+#contact > div:nth-child(2) > form > div:nth-child(2) > textarea{
+    height: 20rem;
+}
+
+.contact-section form ::-webkit-input-placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.contact-section form ::-moz-placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.contact-section form :-ms-input-placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.contact-section form ::-ms-input-placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.contact-section form ::placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.btn-submit{
+    border: none;
+    border-bottom: 0.3rem solid #299ec5;
+    background: #30bae7;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+.footer-section{
+    background: #344b8e;
+    text-align: center;
+    padding: 3rem 0;
+    border-top: 0.1rem dashed #fff;
+}
+
+.footer-section li{
+    display: inline-block;
+    margin: 0 2rem;
+}
+
+.footer-section li a{
+    color: #fff;
+    font-size: 2.4rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.footer-section li a:hover{
+    color: #30bae7;
+}
+
+
+
+
+/* ==================== */
+/* responsive css */
+/* =================== */
+
+
+
